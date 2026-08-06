@@ -1,0 +1,79 @@
+# --- Virtual environments -------------------------------------------------
+# .venv/ is 514 MB of third-party packages and pyvenv.cfg embeds the absolute
+# path of the local Python install (i.e. your Windows username). Never commit it;
+# the README already documents how to rebuild it.
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# --- Python bytecode / build artifacts ------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Jupyter --------------------------------------------------------------
+# Checkpoints are auto-saved copies of notebooks; they can hold cells (and cell
+# outputs) you edited out of the version you meant to publish.
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+.jupyter/
+.jupyter_ystore.db
+profile_default/
+ipython_config.py
+
+# --- Secrets / credentials ------------------------------------------------
+# Nothing of the sort exists in the repo today. These are guards so a future
+# key, token or cert cannot be committed by accident.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+secrets.*
+credentials.*
+*_secret*
+*_credentials*
+
+# --- Editor / IDE ---------------------------------------------------------
+# These can contain absolute local paths, interpreter locations and personal
+# workspace settings.
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# --- OS cruft -------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# --- Test / tooling caches ------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# --- Large generated assets ------------------------------------------------
+# The notebooks generate environments procedurally; if you ever cache a bake or
+# drop in a real HDRI, keep it out of git (size + possible asset licensing).
+*.hdr
+*.exr
+*.npy
+*.npz
+bakes/
